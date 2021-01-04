@@ -7,7 +7,7 @@ This is the Super EZ Graver project documentation. If any of the documentation d
 
 Some of the links are to google searches, this is because actual products will become unavailable at some point so a list of products that you can select from is probably better.
 
-[Arduino Uno](https://store.arduino.cc/arduino-uno-rev3), this is a link to the official Uno page. You can get unofficial versions much cheaper. Other Arduinos can be used but this is a cost effective board which can be run off the same 12VDC power supply so makes it very convenient.
+[Arduino Uno](https://store.arduino.cc/arduino-uno-rev3), this is a link to the official Uno page. You can get unofficial versions much cheaper. Other Arduinos can be used but this is a cost effective board which can be run off the same 12VDC power supply so makes it very convenient. [Ebay arduinos](https://www.google.com/search?q=arduino+uno+ebay&oq=Arduino+uno+ebay)
 
 [Mosfet](https://www.google.com/search?q=15A+400W+DC+5V-36V+Mosfet) Link to google search for appropriate mosfet. This is used by the Arduino to send a pulse of electricity to the solenoid.
 
@@ -21,8 +21,33 @@ Some of the links are to google searches, this is because actual products will b
 
 [Solenoid](https://www.google.com/search?q=XRN-13%2F30TL+12vdc) Link to google search for XRN-13/30TL 12vdc solenoid. This is the tubular solenoid that I've used to power the  fabricated and 3d printed handpieces
 
+[Cable connectors](https://www.google.com/search?q=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino&oq=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino) Link to google search for cable connectors. For connection of the arduino to the other components.
+
+###Other parts
+
+[connectors - male](https://www.google.com/search?q=1%2F4+Inch+6.35mm+Solder+Stereo+Plug%2C+Ancable+Solder+Type+Plastic+6.35mm+TRS+Phone+Connector+with+Shrinkle+Tube+for+Patch+Cables%2C+XLR+Cables) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino.
+
+[connectors - female](https://www.google.com/search?q=1%2F4%22+Stereo+Female+Jack+6.35mm+TRS+Panel+Mount+Socket) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino.
+
+[connectors - power](https://www.google.com/search?q=2.1+mm+centre-positive+barrel+plug+connector) Link to google search for connectors. For 12 power connection to the Arduino.
+
+[Cable](https://www.google.com/search?q=Speaker+Cable+2+x+1.5+mm) Link to google search for speaker cable. I've used a cheap speaker cable which seems to work fine.
+
+[Heat shrink tubing](https://www.google.com/search?q=heat+shrink+tubing) Link to google search for heat shrink tubing. If you are soldering cables together the assortment packs are useful for insulation once they are soldered.
+
+You will also require a box to put everything in. I use a clear plastic storage box.
+
+## Arduino code
+
+The code for the arduino can be found in the src directory of theis github project.
+
+[Arduino programming setup guide](https://www.arduino.cc/en/Guide/ArduinoUno) Link to the  guide to setting up the programming environment for the Arduino.
+
+[Arduino setup YouTube](https://www.youtube.com/watch?v=ELUF8m24sZo) Link to the video guide to setting up the programming environment for the Arduino.
+
+##Wiring diagram
+
+
+
+
  
- 
-
-
-
