@@ -41,13 +41,13 @@ You will also require a box to put everything in. I use a clear plastic storage 
 
 The code for the arduino can be found in the src directory of theis github project.
 
-[Arduino programming setup guide](https://www.arduino.cc/en/Guide/ArduinoUno) Link to the  guide to setting up the programming environment for the Arduino.
+[Arduino programming setup guide](https://www.arduino.cc/en/Guide/ArduinoUno) Link to the  guide for setting up the programming environment for the Arduino.
 
-[Arduino setup YouTube](https://www.youtube.com/watch?v=ELUF8m24sZo) Link to the video guide to setting up the programming environment for the Arduino.
+[Arduino setup YouTube](https://www.youtube.com/watch?v=ELUF8m24sZo) Link to the video guide for setting up the programming environment for the Arduino.
 
 ## Wiring diagram
 
-[Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its mush easier to connect the components up.
+[Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its much easier to connect the components up.
 
 
 
