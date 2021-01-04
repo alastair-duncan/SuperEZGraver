@@ -23,7 +23,7 @@ Some of the links are to google searches, this is because actual products will b
 
 [Cable connectors](https://www.google.com/search?q=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino&oq=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino) Link to google search for cable connectors. For connection of the arduino to the other components.
 
-###Other parts
+### Other parts
 
 [connectors - male](https://www.google.com/search?q=1%2F4+Inch+6.35mm+Solder+Stereo+Plug%2C+Ancable+Solder+Type+Plastic+6.35mm+TRS+Phone+Connector+with+Shrinkle+Tube+for+Patch+Cables%2C+XLR+Cables) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino.
 
@@ -45,7 +45,9 @@ The code for the arduino can be found in the src directory of theis github proje
 
 [Arduino setup YouTube](https://www.youtube.com/watch?v=ELUF8m24sZo) Link to the video guide to setting up the programming environment for the Arduino.
 
-##Wiring diagram
+## Wiring diagram
+
+[Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its mush easier to connect the components up.
 
 
 
