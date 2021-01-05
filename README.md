@@ -49,7 +49,7 @@ The code for the arduino can be found in the [src](src) directory of theis githu
 
 [Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its much easier to connect the components up.
 
-#Handpiece
+# Handpiece
 
 I've created a 3d modelled handpiece in the open source 3d modelling application [Blender](https://www.blender.org/). The [blender source files](docs/design/blender) are available to download as well as the [stl](docs/design/stl). There is a YouTube video on how to [setup the handpiece](https://www.youtube.com/watch?v=aNY35ATTJbg). This was first produced using petg but it may be better to use a more heat conductive material such as [ice9](https://tcpoly.com/shop/) for better heat dissapation. I've not tried this yet.
 
