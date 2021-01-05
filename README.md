@@ -39,7 +39,7 @@ You will also require a box to put everything in. I use a clear plastic storage 
 
 ## Arduino code
 
-The code for the arduino can be found in the src directory of theis github project.
+The code for the arduino can be found in the [src](src) directory of theis github project.
 
 [Arduino programming setup guide](https://www.arduino.cc/en/Guide/ArduinoUno) Link to the  guide for setting up the programming environment for the Arduino.
 
@@ -48,6 +48,14 @@ The code for the arduino can be found in the src directory of theis github proje
 ## Wiring diagram
 
 [Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its much easier to connect the components up.
+
+#Handpiece
+
+I've created a 3d modelled handpiece in the open source 3d modelling application [Blender](https://www.blender.org/). The [blender source files](docs/design/blender) are available to download as well as the [stl](docs/design/stl). There is a YouTube video on how to [setup the handpiece](https://www.youtube.com/watch?v=aNY35ATTJbg). This was first produced using petg but it may be better to use a more heat conductive material such as [ice9](https://tcpoly.com/shop/) for better heat dissapation. I've not tried this yet.
+
+The first handpiece that I made was fabricated from brass and delrin. A YouTube video is available for the [handpiece](https://www.youtube.com/watch?v=D4yPBS8mucQ) along with a video on the handpiece [design refinement](https://www.youtube.com/watch?v=ALAtECnq1Rg)
+
+
 
 
 
