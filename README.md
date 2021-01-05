@@ -1,6 +1,6 @@
 # SuperEZGraver
 
-This is the Super EZ Graver project documentation. If any of the documentation doesn't make sense or links are broken etc please letme know and I'll do my best to fix it.
+This is the Super EZ Graver project documentation. If any of the documentation doesn't make sense or links are broken etc please let me know and I'll do my best to fix it.
 
 
 ## Parts list.
@@ -15,21 +15,21 @@ Some of the links are to google searches, this is because actual products will b
 
 [Power Supply](https://www.google.com/search?q=DC+12V+5A+to+50A+Amp+110V+220V+Power+Supply+12V+-+AC+110+-+220) Link to google search for appropriate 12VDC power supply. The XRN-13/30TL solenoid draws a maximum of 23w which is around 1.8 amps so a 5amp power supply will be ample.
 
-[Foot pedal - potentiometer](https://www.google.com/search?q=M-Audio+EX-P+Expression+Controller+Pedal&oq=M-Audio+EX-P+Expression+Controller+Pedal)Link to google search for potentiometer foot pedal. I use this for control of the PWM speed controler. It is not absulutly necessary as you can use the potentiometer that comes with the PWM speed controller. It does add some flexibility to allow alteration of how much power is transmmitted while engraving.
+[Foot pedal - potentiometer](https://www.google.com/search?q=M-Audio+EX-P+Expression+Controller+Pedal&oq=M-Audio+EX-P+Expression+Controller+Pedal) Link to google search for potentiometer foot pedal. I use this for control of the PWM speed controler. It is not absulutly necessary as you can use the potentiometer that comes with the PWM speed controller. It does add some flexibility to allow alteration of how much power is transmmitted while engraving. If you want to use one of these you will need to remove the potentiometer on the speed controller and wire the foot pedal in. I removed the extra stuff in the pedal and wired straight to the potentiometer in the pedal. Threre is a you tube video of the [insides of the pedal](https://www.youtube.com/watch?v=_dJo02ZIpgE)
 
 [Foot pedal - hall effect](https://www.google.com/search?q=Electric+Scooter+Foot+Throttle+Speed+Pedal+Accelerator+Bike+Golf+Cart+Go+Kart) Link to google search for hall effect foot pedal. I use this foot pedal for controling the frequency of the pulses that are sent to the solenoid. You could use a further potentiometer foot pedal for frequency control. The Arduino code will require appropriate parameter changes to use the potentiometer foot pedal.
 
 [Solenoid](https://www.google.com/search?q=XRN-13%2F30TL+12vdc) Link to google search for XRN-13/30TL 12vdc solenoid. This is the tubular solenoid that I've used to power the  fabricated and 3d printed handpieces
 
-[Cable connectors](https://www.google.com/search?q=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino&oq=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino) Link to google search for cable connectors. For connection of the arduino to the other components.
+[Cable connectors](https://www.google.com/search?q=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino&oq=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino) Link to google search for cable connectors. For connection of the arduino to the other components. 
 
 ### Other parts
 
-[connectors - male](https://www.google.com/search?q=1%2F4+Inch+6.35mm+Solder+Stereo+Plug%2C+Ancable+Solder+Type+Plastic+6.35mm+TRS+Phone+Connector+with+Shrinkle+Tube+for+Patch+Cables%2C+XLR+Cables) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino.
+[connectors - male](https://www.google.com/search?q=1%2F4+Inch+6.35mm+Solder+Stereo+Plug%2C+Ancable+Solder+Type+Plastic+6.35mm+TRS+Phone+Connector+with+Shrinkle+Tube+for+Patch+Cables%2C+XLR+Cables) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino. These are optional you can solder the wires together or use connector blocks.
 
-[connectors - female](https://www.google.com/search?q=1%2F4%22+Stereo+Female+Jack+6.35mm+TRS+Panel+Mount+Socket) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino.
+[connectors - female](https://www.google.com/search?q=1%2F4%22+Stereo+Female+Jack+6.35mm+TRS+Panel+Mount+Socket) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino. These are optional you can solder the wires together or use connector blocks.
 
-[connectors - power](https://www.google.com/search?q=2.1+mm+centre-positive+barrel+plug+connector) Link to google search for connectors. For 12 power connection to the Arduino.
+[connectors - power](https://www.google.com/search?q=2.1+mm+centre-positive+barrel+plug+connector) Link to google search for connectors. For 12vdc power connection to the Arduino. This is optional you can use a usb power supply with an appripriate connector for the arduino.
 
 [Cable](https://www.google.com/search?q=Speaker+Cable+2+x+1.5+mm) Link to google search for speaker cable. I've used a cheap speaker cable which seems to work fine.
 
@@ -39,7 +39,7 @@ You will also require a box to put everything in. I use a clear plastic storage 
 
 ## Arduino code
 
-The code for the arduino can be found in the [src](src) directory of theis github project.
+The code for the arduino can be found in the [src](src) directory of this github project.
 
 [Arduino programming setup guide](https://www.arduino.cc/en/Guide/ArduinoUno) Link to the  guide for setting up the programming environment for the Arduino.
 
