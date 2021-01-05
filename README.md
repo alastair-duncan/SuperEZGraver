@@ -49,7 +49,7 @@ The code for the arduino can be found in the [src](src) directory of theis githu
 
 [Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its much easier to connect the components up.
 
-To be completed
+![Wiring Diagram](docs/images/wiring.svg)
 
 # Handpiece
 
