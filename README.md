@@ -29,8 +29,6 @@ Some of the links are to google searches, this is because actual products will b
 
 [connectors - female](https://www.google.com/search?q=1%2F4%22+Stereo+Female+Jack+6.35mm+TRS+Panel+Mount+Socket) Link to google search for connectors. I use these for connection of the foot pedals to the PWM controller and Arduino. These are optional you can solder the wires together or use connector blocks.
 
-[connectors - power](https://www.google.com/search?q=2.1+mm+centre-positive+barrel+plug+connector) Link to google search for connectors. For 12vdc power connection to the Arduino. This is optional you can use a usb power supply with an appripriate connector for the arduino.
-
 [Cable](https://www.google.com/search?q=Speaker+Cable+2+x+1.5+mm) Link to google search for speaker cable. I've used a cheap speaker cable which seems to work fine.
 
 [Heat shrink tubing](https://www.google.com/search?q=heat+shrink+tubing) Link to google search for heat shrink tubing. If you are soldering cables together the assortment packs are useful for insulation once they are soldered.
