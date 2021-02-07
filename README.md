@@ -2,6 +2,17 @@
 
 This is the Super EZ Graver project documentation. If any of the documentation doesn't make sense or links are broken etc please let me know and I'll do my best to fix it.
 
+##Background
+
+I started engraving around 18 months ago after coming across some engraving videos by [Shaun Hughes](https://www.youtube.com/c/express375/videos) on YouTube. I started off with some push engraving while I ordered up the parts for Shaun's "Home made hand engraving machine". I built one of these and proceeded to hack my way through some brass and copper practice plates and I also enjoy making jewellery with enamel. I have now aquired a microscope which has had a marked effect on my engraving, previously I used an optivisor with an added loupe but it is not adequate for my old eyes. 
+
+Shaun had the idea of a solenoid powered engraving system over 2 years ago and posted a video on [YouTube](https://www.youtube.com/watch?v=2177lFeMcNw) and one of the engraving forums. He wasn't the first to come up with the idea, as far as I can find out that was [Steve Lindsay back in 1979](https://www.handengravetools.com/air-engraver-evolution.htm). So its nothing new although the availability of cheap electronic components and the advent of 3d printing has enabled me to put these together to make the Super EZ Graver.
+
+I should also mention that there is a commercial solenoid graver called [PulseGraver](https://pulsegraver.com/) marketed by [Tira Mitchel at engraver.com](http://engraver.com). If you want a ready made system head over there, if you like to tinker yourself you've reached the right place.
+
+The Super EZ Graver that I have built is based around a XRN-13/30TLS solenoid. This is a small tubular solenoid that is 13mm in diameter and 30mm long. It will not plow its way all materials put before it. You may find that for your purpose it does not pack the punch that you want but it suits me. I've had to adapt my engraving so that it is a bit more refined, which I think is an improvement for me, I no longer bury the tool and break tips. There may be a nolenoid out there that will give all of the power and finess that everyone needs in a small package but I doubt it, I suspect that more than one toolpiece will be required and hopefully I'll add more designes and information to this project when it becomes available. 
+
+The controller and power source can handle much more powerful solenoids but I've only tried out a couple, I've made a [list of the ones I've tried](docs/solenoids.md) and added some comments. If you've tried others let me know and I'll add them to the list.  
 
 ## Parts list.
 
@@ -47,11 +58,20 @@ The code for the arduino can be found in the [src](src) directory of this github
 
 [Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its much easier to connect the components up.
 
+####One foot pedal
 ![Wiring Diagram](docs/images/wiring.svg)
+####Two foot pedals, one hall effect, one m-audio
+![Wiring Diagram](docs/images/wiringWithM-audio.svg)
+####Two foot pedals,both m-audio
+![Wiring Diagram](docs/images/wiringWith2M-audioPedals.svg)
 
 # Handpiece
 
-I've created a 3d modelled handpiece in the open source 3d modelling application [Blender](https://www.blender.org/). The [blender source files](docs/design/blender) are available to download as well as the [stl](docs/design/stl). There is a YouTube video on how to [setup the handpiece](https://www.youtube.com/watch?v=aNY35ATTJbg). This was first produced using petg but it may be better to use a more heat conductive material such as [ice9](https://tcpoly.com/shop/) for better heat dissapation. I've not tried this yet.
+I've created two 3d modelled handpieces in the open source 3d modelling application [Blender](https://www.blender.org/). The [blender source files](docs/design/XRN13-30TLS/blender) are available to download as well as the [stl](docs/design/XRN13-30TLS/blender/stl). There is a YouTube video on how to [setup the handpiece](https://www.youtube.com/watch?v=aNY35ATTJbg) and also the [Mk2](https://youtu.be/sa4kAdcZSkc) version which has a brass sleve insert. This was first produced using petg but it may be better to use a more heat conductive material such as [ice9](https://tcpoly.com/shop/) for better heat dissapation. I've not tried this yet.
+
+[Anarasha](https://www.youtube.com/channel/UCKSbczGXmN4zeG3NeuPGLAg) had a problem with the blender version of the 3D model as the blender model has tolerances built in to it which causes problems with his slicer(I think). He has kindly produced a [fusion360](docs/design/XRN13-30TLS/fusion360) model of the handpiece which has the [stl](docs/design/XRN13-30TLS/fusion360/stl) and STEP files if this suits you better.
+
+
 
 The first handpiece that I made was fabricated from brass and delrin. A YouTube video is available for the [handpiece](https://www.youtube.com/watch?v=D4yPBS8mucQ) along with a video on the handpiece [design refinement](https://www.youtube.com/watch?v=ALAtECnq1Rg)
 

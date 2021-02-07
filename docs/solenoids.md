@@ -1,0 +1,10 @@
+XRN-13/30TLS Small light general purpose tubular solenoid 12vdc and 2Vdc versions are available 21W good for smaller fine engraving 50/100gms force. There does not seem to be any difference to me in power between the 12Vdc and 24Vdc models. I've pushed 24Vdc throuch the 12Vdc model and this increases the power a lot but at the expence of more heat - too much, I managed to melt one of the 3d printed handles :-)
+
+JF-0530B used by [Thinh Tran](https://www.youtube.com/channel/UCPPznlrRBxmUakzwW97TLtA) I've got one of these but have not tried it yet)t it is an open frame solenoid and comes in 12Vdc and 24Vdc versions with a rating of 5N force so should pack a stronger punch but would require a further design for the handpiece.
+
+JF-Z05 I think this is the big solenoid that has been used by [BZ Urison](https://www.youtube.com/channel/UCu4CvU6LO0kVl6MlCuTM63g) but I'm not certain. Its a 45N 12Vdc and 24Vdc open frame solenoid and he has removed the frame and is around 25mm in diameter and around 50mm in length so is big but has more power than anyone should need. One of the problems I have with the spec on this one is that reported power consumption is not consistent 400mA but on the solenoid image it states 2A that's a big difference. The problem with more power is that tips are more likely to break. The specs vary so much you don't know what to believe!
+
+XRN-19/42TL I have a couple of these and hooked them up without a handpiece but although they are much bigger they do not produce any more force than the XRN-13/30TLS which I'm surprised at. There are 12Vdc and 24Vdc versions 
+
+
+
