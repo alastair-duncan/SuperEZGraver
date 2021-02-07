@@ -2,7 +2,7 @@
 
 This is the Super EZ Graver project documentation. If any of the documentation doesn't make sense or links are broken etc please let me know and I'll do my best to fix it.
 
-##Background
+## Background
 
 I started engraving around 18 months ago after coming across some engraving videos by [Shaun Hughes](https://www.youtube.com/c/express375/videos) on YouTube. I started off with some push engraving while I ordered up the parts for Shaun's "Home made hand engraving machine". I built one of these and proceeded to hack my way through some brass and copper practice plates and I also enjoy making jewellery with enamel. I have now aquired a microscope which has had a marked effect on my engraving, previously I used an optivisor with an added loupe but it is not adequate for my old eyes. 
 
@@ -58,11 +58,11 @@ The code for the arduino can be found in the [src](src) directory of this github
 
 [Mosfet and Arduino background](https://bildr.org/2012/03/rfp30n06le-arduino/) This is the background to mosfets for power control using the arduino. I've used a mosfet module that has the mosfet, diode and resister in a package so its much easier to connect the components up.
 
-####One foot pedal
+#### One foot pedal
 ![Wiring Diagram](docs/images/wiring.svg)
-####Two foot pedals, one hall effect, one m-audio
+#### Two foot pedals, one hall effect, one m-audio
 ![Wiring Diagram](docs/images/wiringWithM-audio.svg)
-####Two foot pedals,both m-audio
+#### Two foot pedals,both m-audio
 ![Wiring Diagram](docs/images/wiringWith2M-audioPedals.svg)
 
 # Handpiece
