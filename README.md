@@ -62,7 +62,7 @@ The code for the arduino can be found in the [src](src) directory of this github
 ![Wiring Diagram](docs/images/wiring.svg)
 #### Two foot pedals, one hall effect, one m-audio
 ![Wiring Diagram](docs/images/wiringWithM-audio.svg)
-#### Two foot pedals, both m-audio nothe the addition of a jumper between D7 and ground
+#### Two foot pedals, both m-audio note the addition of a jumper between D7 and ground
 ![Wiring Diagram](docs/images/wiringWith2M-audioPedals.svg)
 
 # Handpiece
