@@ -78,6 +78,16 @@ I've created two 3d modelled handpieces in the open source 3d modelling applicat
 The first handpiece that I made was fabricated from brass and delrin. A YouTube video is available for the [handpiece](https://www.youtube.com/watch?v=D4yPBS8mucQ) along with a video on the handpiece [design refinement](https://www.youtube.com/watch?v=ALAtECnq1Rg)
 
 
+# Gravers et al
+
+[Carbide rods - UK](http://intertool.co.uk.websitebuilder.prositehosting.co.uk/carbide-rod)
+[Carbide rods - US]()
+
+[3/32" HSS graver blanks - UK](https://www.ebay.co.uk/itm/360515374956) or [Gloster Tooling Supplies](https://www.glostertooling.co.uk/)
+
+[Carbalt gravers](https://www.airgraver.com/graver-blanks.htm)
+[Graver sharpening templates](http://airgraver.com/sharpening.html)
+
 
 
 
