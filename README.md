@@ -4,15 +4,15 @@ This is the Super EZ Graver project documentation. If any of the documentation d
 
 ## Background
 
-I started engraving early in 2019 after coming across some engraving videos by [Shaun Hughes](https://www.youtube.com/c/express375/videos) on YouTube. I started off with some push engraving while I ordered up the parts for Shaun's "Home made hand engraving machine". I built one of these and proceeded to hack my way through some brass and copper practice plates and I also enjoy making jewellery with enamel. I have now aquired a microscope which has had a marked effect on my engraving, previously I used an optivisor with an added loupe but it is not adequate for my old eyes. 
+I started engraving early in 2019 after coming across some engraving videos by [Shaun Hughes](https://www.youtube.com/c/express375/videos) on YouTube. I started off with some push engraving while I ordered up the parts for Shaun's "Home made hand engraving machine". I built one of these and proceeded to hack my way through some brass and copper practice plates and I also enjoy making jewellery with enamel. I have now aquired a microscope which has had a marked effect on my engraving, previously I used an optivisor with an added loupe but it is not adequate for my old eyes.
 
 Shaun had the idea of a solenoid powered engraving system over 2 years ago and posted a video on [YouTube](https://www.youtube.com/watch?v=2177lFeMcNw) and one of the engraving forums. He wasn't the first to come up with the idea, as far as I can find out that was [Steve Lindsay back in 1979](https://www.handengravetools.com/air-engraver-evolution.htm). So its nothing new although the availability of cheap electronic components and the advent of 3d printing has enabled me to put these together to make the Super EZ Graver. He also has tinkered with a Rolson engraver uses an AC driven laminated solenoid and power is regulated using a fan speed controller [YouTube](https://youtu.be//Ke8bDoJ-2io). Jerry Moralles uses a similar tool to engrave coins very effectively: [YouTube](https://www.youtube.com/channel/UC4XOksM98SMPymVrHOIaOxg). He also has made some additions that allow for the mounting of small abrasive stones to mechanise sanding and finishing very effectively.
 
 Prior to this the McShirley power mallet utilises very similar technology by using a solenoid with presets for power and speed and a number of potentiometers which are used for fine control, you can view their 1975 [patent here](https://patentimages.storage.googleapis.com/81/7c/a0/0b0333b2f1563e/US3921044.pdf). There is also a video showing the [McShirley Power Mallet in action](https://www.youtube.com/watch?v=bn_Ea9L7uJU)
 
-The Super EZ Graver that I have built is based around a XRN-13/30TLS solenoid. This is a small tubular solenoid that is 13mm in diameter and 30mm long. It will not plow its way through all materials put before it. You may find that for your purpose it does not pack the punch that you want but it suits me. I've had to adapt my engraving so that it is a bit more refined, which I think is an improvement for me, I no longer bury the tool and break tips. There may be a solenoid out there that will give all of the power and finess that everyone needs in a small package but I doubt it, I suspect that more than one toolpiece will be required and hopefully I'll add more designs and information to this project when it becomes available. 
+The Super EZ Graver that I have built is based around a XRN-13/30TLS solenoid. This is a small tubular solenoid that is 13mm in diameter and 30mm long. It will not plow its way through all materials put before it. You may find that for your purpose it does not pack the punch that you want but it suits me. I've had to adapt my engraving so that it is a bit more refined, which I think is an improvement for me, I no longer bury the tool and break tips. There may be a solenoid out there that will give all of the power and finess that everyone needs in a small package but I doubt it, I suspect that more than one toolpiece will be required and hopefully I'll add more designs and information to this project when it becomes available.
 
-The controller and power source can handle much more powerful solenoids but I've only tried out a couple, I've made a [list of the ones I've tried](docs/solenoids.md) and added some comments. If you've tried others let me know and I'll add them to the list.  
+The controller and power source can handle much more powerful solenoids but I've only tried out a couple, I've made a [list of the ones I've tried](docs/solenoids.md) and added some comments. If you've tried others let me know and I'll add them to the list.
 
 ## Parts list.
 
@@ -34,7 +34,7 @@ Some of the links are to google searches, this is because actual products will b
 
  (I did cut off the screw thread and the piston needs to be cut down. I also removed the label from the solenoid so that it's not so tight in the handpiece. Once you have cut off the screw thread from the solenoid and cleaned it up with a file this can be installed into the handpiece. Screw in the inner sleeve add the spring and the piston. Press the piston in so that it's hard up against the solenoid body, then offer up the QC toolholder. You should be able to take a measurement for how far it is protruding from the handpiece. The measurement needs to be for the part which can move inside the handpiece. Subtract 3mm from that measurement and that is how much you should remove from the end of the piston. What you are aiming for is, when the piston is fully depressed the QC toolholder protrudes no more than 3mm from the flat area of the handpiece. Taking off less is better than taking off too much; you can always cut off a bit more but it's much harder to add material back. 2.5mm protruding is probably optimal with the piston fully depressed.)
 
-[Cable connectors](https://www.google.com/search?q=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino&oq=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino) Link to google search for cable connectors. For connection of the arduino to the other components. 
+[Cable connectors](https://www.google.com/search?q=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino&oq=Breadboard+Jumper+Wires+Ribbon+Cables+Kit+for+arduino) Link to google search for cable connectors. For connection of the arduino to the other components.
 
 ### Other parts
 
@@ -81,15 +81,9 @@ The first handpiece that I made was fabricated from brass and delrin. A YouTube 
 # Gravers et al
 
 [Carbide rods - UK](http://intertool.co.uk.websitebuilder.prositehosting.co.uk/carbide-rod)
-[Carbide rods - US]()
+[Carbide rods - US](https://centennialcarbide.com/products-page/carbide-rod-blanks/)
 
 [3/32" HSS graver blanks - UK](https://www.ebay.co.uk/itm/360515374956) or [Gloster Tooling Supplies](https://www.glostertooling.co.uk/)
 
 [Carbalt gravers](https://www.airgraver.com/graver-blanks.htm)
 [Graver sharpening templates](http://airgraver.com/sharpening.html)
-
-
-
-
-
- 
