@@ -14,7 +14,7 @@ def runGraver(speed, power, duration):
     # speed 0.0..1.0
     # power 0.0..1.0
     # duration seconds
-    offTime = 1000/(maxFreq * speed) - pulseLength
+    offTime = (int)(1000/(maxFreq * speed)) - pulseLength
     assert True, offTime >= pulseLength # 50% overall duty cycle max
 
     pwmPin = PWM(Pin(outputPin))
