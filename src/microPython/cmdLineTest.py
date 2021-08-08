@@ -5,18 +5,35 @@ import machine
 import time
 from machine import Pin, PWM
 
-outputPin = 0
-pulseLength = 15     # ms
-maxFreq = 5000/60   # Hz - representation is Strokes Per Minute
-speedBias = 0.05  # ignore any readings below this and don't switch on
-pwmFreq = 1000  # max 1000
-pwmRange = 1023
+# Defaults
+outputPin = 0               # 
+defaultPulseLength = 15     # ms
+maxFreq = 5000/60           # Hz - representation is Strokes Per Minute
+speedBias = 0.05            # ignore any readings below this and don't switch on
+pwmFreq = 1000              # max 1000
+pwmRange = 1023             # Will vary
 
+# Init the PWM - primarily, turn it off if on
 pwmPin = PWM(Pin(outputPin))
 pwmPin.freq(pwmFreq)
 pwmPin.duty(0)
 
-def runGraver(speed, power, duration):
+#
+# runGraver
+#
+# Inputs:
+# speed 0.0..1.0 - proportion of maxFreq
+# power 0.0..1.0 - sets PWM duty cycle (0..100%)
+# duration - how long to run the test in seconds
+# pulseLength - optional, will default to defaultPulseLength
+#
+# Outputs:
+# Drives solenoid via PWM
+#
+# Returns:
+# None
+#
+def runGraver(speed, power, duration, pulseLength = defaultPulseLength):
     # speed 0.0..1.0
     if speed < 0.0 or speed > 1.0:
         print("Error - speed must be in the range 0.0..1.0")
@@ -26,13 +43,19 @@ def runGraver(speed, power, duration):
         print("Error - power must be in the range 0.0..1.0")
         return
 
-    # power 0.0..1.0
-    # duration seconds
     offTime = (int)(1000/(maxFreq * speed)) - pulseLength
     duty = (int)(power * pwmRange)
 
-    assert True, offTime >= pulseLength # 50% overall duty cycle max
+    if offTime <= pulseLength:
+        offTime = pulseLength # 50% overall duty cycle max
+        print("\nOff time throttled")
 
+    print()
+    print("On time = ", pulseLength, "ms")
+    print("Off time = ", offTime, "ms")
+    print("SPM = ", (60 * 1000/(pulseLength + offTime)))
+    print("Duration = ", duration, "s")
+    print()
 
     if speed >= speedBias:
         startTime = time.ticks_ms()
