@@ -6,7 +6,7 @@ import time
 from machine import Pin, PWM
 
 # Defaults
-outputPin = 0               # 
+outputPin = 0               #
 defaultPulseLength = 15     # ms
 maxFreq = 2500/60           # Hz - representation is Strokes Per Minute
 speedBias = 0.01            # ignore any readings below this and don't switch on
@@ -39,13 +39,19 @@ def runGraver(speed, power, duration, pulseLength = defaultPulseLength):
     # speed 0.0..1.0
     if speed < 0.0 or speed > 1.0:
         print("Error - speed must be in the range 0.0..1.0")
-        return 
+        return
 
     if power < 0.0 or power > 1.0:
         print("Error - power must be in the range 0.0..1.0")
         return
 
-    offTime = (int)(1000/(maxFreq * speed)) - pulseLength
+    # Divide by zero guard
+    if speed > 0.0:
+        offTime = (int)(1000/(maxFreq * speed)) - pulseLength
+    else:
+        # This will be detected in the next test of offTime
+        offTime = 0
+
     duty = (int)(power * pwmRange)
 
     if offTime <= pulseLength:
@@ -75,7 +81,7 @@ def runGraver(speed, power, duration, pulseLength = defaultPulseLength):
                 # Guard the solenoid - it doesn't like being energised for long and there's not much detail on actual duty cycles
                 cumulativeOnTime += pulseLength
                 if cumulativeOnTime >= 2000:
-                    print("2s on-time reached; cooling")
+                    print("\n2s on-time reached; cooling...")
                     duration += coolingTime
                     time.sleep(coolingTime)
                     cumulativeOnTime = 0
@@ -84,7 +90,7 @@ def runGraver(speed, power, duration, pulseLength = defaultPulseLength):
         print("Duration complete")
 
     else:
-        print("Speed < bias, ignore")
+        print("Speed < bias, ignore; exit")
 
 
     pwmPin.deinit()

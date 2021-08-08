@@ -81,9 +81,11 @@ The first handpiece that I made was fabricated from brass and delrin. A YouTube 
 # Gravers et al
 
 [Carbide rods - UK](http://intertool.co.uk.websitebuilder.prositehosting.co.uk/carbide-rod)
+
 [Carbide rods - US](https://centennialcarbide.com/products-page/carbide-rod-blanks/)
 
 [3/32" HSS graver blanks - UK](https://www.ebay.co.uk/itm/360515374956) or [Gloster Tooling Supplies](https://www.glostertooling.co.uk/)
 
 [Carbalt gravers](https://www.airgraver.com/graver-blanks.htm)
+
 [Graver sharpening templates](http://airgraver.com/sharpening.html)
