@@ -27,7 +27,7 @@ pot_freq_val = 0
 #the frequency value is in the range of 0 to 65536 which will be divided by the quantisation_factor which gives 65536//quantisation_factor different speed values
 #this seems to work ok. If a finer granularity is required then change the quantisation_factor
 quantisation_factor = 655
-#using 100 here
+#using 100 here unsigned int16 max
 max_freq_sleep = 65536//quantisation_factor
 # adjust this value if a faster frequency is required - remember that lower values will produce more heat
 default_sleep_freq = 18
@@ -49,6 +49,25 @@ def updateDisplay():
         write15.text("freq: " + str(freq_rpm), 0, 0)
         write15.text("duty: " + str(duty_percent), 0, 15)
         oled.show()
+
+# map function taken directly from arduino codebase
+def map(value_to_map, fromLow, fromHigh, toLow, toHigh):
+    """
+        Re-maps a number from one range to another. That is, a value of fromLow would get mapped to toLow, a value of fromHigh to toHigh, values in-between to values in-between, etc.
+
+        Parameters
+        ----------unsigned int16
+        value_to_map : value read from the pin
+        ----------unsigned int16 max
+        fromLow: the lower bound of the value’s current range.
+        ----------unsigned int16 
+        fromHigh: the upper bound of the value’s current range.
+        ----------unsigned int16 
+        toLow: the lower bound of the value’s target range.
+        ----------unsigned int16 
+        toHigh: the upper bound of the value’s target range.
+    """
+    return int((value_to_map - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow)
         
 # as the pi pico has 2 cores run the oled update in a thread as it will affect the timing otherwise
 # oled device is pretty slow and will block execution and hence slow down the system
@@ -66,19 +85,22 @@ while True:
         duty_cycle_val = pot_pwm.read_u16()
         #print("duty " + str(duty_cycle_val))
         #remap the value to one that is meaningful, anything under 30000 will not power the solenoid
-        duty_cycle_val = (duty_cycle_val - 150) * (65536 - 20000) // (65536  - 150) + 20000
-        # the duty cycle value has been remapped to 30000 to 65536 but the least value should be 0 otherwise
-        # there will still be power being transmitted to the solenoid at the lowest value
-        if (duty_cycle_val < 40000):
+        duty_cycle_val = map(duty_cycle_val, 150, 65536, 20000, 65536)
+        # the duty cycle value has been remapped from 30000 to 65536 but the least value should be 0 otherwise
+        # there will still be power being transmitted to the solenoid at the lowest value even if there is
+        # not enough power to move the piston so anything under the minimum swithc it off
+        if (duty_cycle_val < 30000):
             duty_cycle_val = 0
         
         print("duty " + str(duty_cycle_val))
         pwm13.duty_u16(duty_cycle_val)
         # the value of 15ms or above alows for the full travel of the XRN13/30 solenoid a different solenoid may require adjustment of this value 
+        print("duty_ns " + str(pwm13.duty_ns()))
         utime.sleep_ms(default_sleep_duty)
-        
         #make sure there's no power
         pwm13.duty_u16(0)
+        # a liniar ramp of speed is not necessarily required so manipulate is slightly
+        #so that when its slow its really slow
         #if its a slow speed value slow it right down
         if(pot_freq_val < slow_speed_value):
             # delay before next hit, ramp up the speed slowly so that its a smooth transition
