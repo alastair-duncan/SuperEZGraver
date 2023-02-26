@@ -1,0 +1,97 @@
+
+from machine import Pin, PWM, ADC, I2C
+import utime, math, _thread
+from ssd1306 import SSD1306_I2C
+from oled import Write, GFX, SSD1306_I2C
+from oled.fonts import ubuntu_mono_15
+
+# setup the oled display
+WIDTH =128
+HEIGHT= 32
+i2c=I2C(0,scl=Pin(17),sda=Pin(16),freq=400000)
+oled = SSD1306_I2C(WIDTH,HEIGHT,i2c)
+write15 = Write(oled, ubuntu_mono_15)
+
+
+#output pin for PWM values this is connected to the mosfet
+pwm13 = PWM(Pin(13))
+#assign the pin to read the power values from
+pot_pwm = ADC(28)
+#assign the pin to read the frequency values from
+pot_freq = ADC(27)
+#set the frequency of the pwm output
+pwm13.freq(400)
+#setup some variables to be used in the while loop
+duty_cycle_val = 0
+pot_freq_val = 0
+#the frequency value is in the range of 0 to 65536 which will be divided by the quantisation_factor which gives 65536//quantisation_factor different speed values
+#this seems to work ok. If a finer granularity is required then change the quantisation_factor
+quantisation_factor = 655
+#using 100 here
+max_freq_sleep = 65536//quantisation_factor
+# adjust this value if a faster frequency is required - remember that lower values will produce more heat
+default_sleep_freq = 18
+default_sleep_duty = 25
+#values from 1 to slow_speed_value will be slowed right down 
+slow_speed_value = 30
+duty_percent = 0
+freq_rpm = 0
+
+sLock = _thread.allocate_lock()
+
+def updateDisplay():
+    
+    while True:
+        #percentage calc for the display
+        duty_percent =  math.ceil((duty_cycle_val / 65536) * 100)
+        write15.text("freq:           ", 0, 0)
+        write15.text("duty:           ", 0, 15)
+        write15.text("freq: " + str(freq_rpm), 0, 0)
+        write15.text("duty: " + str(duty_percent), 0, 15)
+        oled.show()
+        
+# as the pi pico has 2 cores run the oled update in a thread as it will affect the timing otherwise
+# oled device is pretty slow and will block execution and hence slow down the system
+# no need for synchronisationas its a read operation from a shared global variable
+#synchronisation affects the timing of the system, slows everything down.
+_thread.start_new_thread(updateDisplay,())
+
+while True:
+    
+    #freq_rpm = 0
+    pot_freq_val = pot_freq.read_u16()//quantisation_factor
+    
+    if (pot_freq_val > 1 ):
+        #read the value from the foot pedal potentiometer range of 0-65536
+        duty_cycle_val = pot_pwm.read_u16()
+        #print("duty " + str(duty_cycle_val))
+        #remap the value to one that is meaningful, anything under 30000 will not power the solenoid
+        duty_cycle_val = (duty_cycle_val - 150) * (65536 - 20000) // (65536  - 150) + 20000
+        # the duty cycle value has been remapped to 30000 to 65536 but the least value should be 0 otherwise
+        # there will still be power being transmitted to the solenoid at the lowest value
+        if (duty_cycle_val < 40000):
+            duty_cycle_val = 0
+        
+        print("duty " + str(duty_cycle_val))
+        pwm13.duty_u16(duty_cycle_val)
+        # the value of 15ms or above alows for the full travel of the XRN13/30 solenoid a different solenoid may require adjustment of this value 
+        utime.sleep_ms(default_sleep_duty)
+        
+        #make sure there's no power
+        pwm13.duty_u16(0)
+        #if its a slow speed value slow it right down
+        if(pot_freq_val < slow_speed_value):
+            # delay before next hit, ramp up the speed slowly so that its a smooth transition
+            utime.sleep_ms((slow_speed_value  - pot_freq_val) * 10)
+            freq_rpm = (slow_speed_value  - pot_freq_val) * 10
+        else:
+            #needs to be reset if its done here the display behaves itself better
+            freq_rpm = 0
+        freq_rpm = 65536 // (freq_rpm + (default_sleep_freq + (max_freq_sleep - pot_freq_val)))
+      
+    else:
+        freq_rpm = 0
+    #switch off the power and go to sleep
+    pwm13.duty_u16(0)    
+    utime.sleep_ms(default_sleep_freq + (max_freq_sleep - pot_freq_val))
+     
