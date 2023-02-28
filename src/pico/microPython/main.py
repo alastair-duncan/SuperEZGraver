@@ -29,9 +29,11 @@ pot_freq_val = 0
 quantisation_factor = 655
 #using 100 here unsigned int16 max
 max_freq_sleep = 65536//quantisation_factor
-# adjust this value if a faster frequency is required - remember that lower values will produce more heat
-default_sleep_freq = 18
-default_sleep_duty = 25
+# adjust this value if a faster frequency is required, lower values = more rpms - remember that lower values will produce more heat
+default_sleep_freq = 25
+# this value determins how long the power is applied to the solenoid. 15ms seems to be the lowest for the 13/30 for a full length stroke
+# this may need altering for different solenoids - higher values will produce more heat.
+default_sleep_duty = 15
 #values from 1 to slow_speed_value will be slowed right down 
 slow_speed_value = 30
 duty_percent = 0
@@ -75,6 +77,9 @@ def map(value_to_map, fromLow, fromHigh, toLow, toHigh):
 #synchronisation affects the timing of the system, slows everything down.
 _thread.start_new_thread(updateDisplay,())
 
+print(" **************************************************************** ")
+print(" Super EZ Graver pi pico software ")
+print(" **************************************************************** ")
 while True:
     
     #freq_rpm = 0
@@ -92,20 +97,22 @@ while True:
         if (duty_cycle_val < 30000):
             duty_cycle_val = 0
         
-        print("duty " + str(duty_cycle_val))
+        #print("duty " + str(int((duty_cycle_val / 65536) * 100)))
         pwm13.duty_u16(duty_cycle_val)
         # the value of 15ms or above alows for the full travel of the XRN13/30 solenoid a different solenoid may require adjustment of this value 
-        print("duty_ns " + str(pwm13.duty_ns()))
+        #print("duty_ns " + str(pwm13.duty_ns()))
         utime.sleep_ms(default_sleep_duty)
         #make sure there's no power
         pwm13.duty_u16(0)
-        # a liniar ramp of speed is not necessarily required so manipulate is slightly
+        # a linear ramp up of speed is not necessarily required so manipulate is slightly
         #so that when its slow its really slow
         #if its a slow speed value slow it right down
         if(pot_freq_val < slow_speed_value):
             # delay before next hit, ramp up the speed slowly so that its a smooth transition
-            utime.sleep_ms((slow_speed_value  - pot_freq_val) * 10)
-            freq_rpm = (slow_speed_value  - pot_freq_val) * 10
+            # this is in addition to the rpm sleep but only added for lower rpms
+            rpm_sleep_time = ((slow_speed_value  - pot_freq_val) * 10)
+            #print("rpm_sleep_time = " + str(rpm_sleep_time))
+            utime.sleep_ms(rpm_sleep_time)
         else:
             #needs to be reset if its done here the display behaves itself better
             freq_rpm = 0
@@ -113,7 +120,13 @@ while True:
       
     else:
         freq_rpm = 0
-    #switch off the power and go to sleep
-    pwm13.duty_u16(0)    
-    utime.sleep_ms(default_sleep_freq + (max_freq_sleep - pot_freq_val))
+    #switch off the power 
+    pwm13.duty_u16(0)
+    
+    # this calculation smooths out ramp up, if the default_sleep_freq is used then its very top heavy, not much movement in the pedal before its at max rpm
+    # this makes it much more usable - for me at least ;-)
+    sleep_time = (default_sleep_freq + (max_freq_sleep - pot_freq_val))
+    #print("sleep_time = " + str(sleep_time))
+    #and go to sleep
+    utime.sleep_ms(sleep_time)
      
