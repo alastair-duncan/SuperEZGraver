@@ -30,12 +30,15 @@ there are now mk2 and mk3 versions
 
 The [blender source files](docs/design/XRN13-30TLS/mk2/blender) are available to download as well as the [stl](docs/design/XRN13-30TLS/mk2/blender/stl). There is a YouTube video on how to [setup the handpiece](https://www.youtube.com/watch?v=aNY35ATTJbg) and also the [Mk2](https://youtu.be/sa4kAdcZSkc) version which has a brass sleve insert. This was first produced using petg but it may be better to use a more heat conductive material such as [ice9](https://tcpoly.com/shop/) for better heat dissapation. I've not tried this yet.
 
+[Anarasha](https://www.youtube.com/channel/UCKSbczGXmN4zeG3NeuPGLAg) had a problem with the blender version of the 3D model as the blender model has tolerances built in to it which causes problems with his slicer(I think). He has kindly produced a [fusion360](docs/design/XRN13-30TLS/fusion360) model of the handpiece which has the [stl](docs/design/XRN13-30TLS/fusion360/stl) and STEP files if this suits you better.
+
+There are also some variations contributed by [ps-bond](https://github.com/ps-bond) one of these will allow the use if the solenoid without removing the screw boss.
+
 ### Mk3 Handpiece
 
 This handpiece has the addition of a mount for a 25mm fan and is experimental. It suits my hand size and is comfortable. There are no threads on this handle, it does require some 2.5mm machine screws and nuts and a threaded insert in the handle for a stroke length adjuster. I will make a video of how its put together at some point and link to it from here. The handpiece works without the fan but if you want some additional cooling when pushing the Super EZ Graver hard then the fan really helps. Something like [this](https://www.google.com/search?q=micro+fan+25mm+12v+dc) I've used a 12v dc version but there are other voltages available.
 
-[Anarasha](https://www.youtube.com/channel/UCKSbczGXmN4zeG3NeuPGLAg) had a problem with the blender version of the 3D model as the blender model has tolerances built in to it which causes problems with his slicer(I think). He has kindly produced a [fusion360](docs/design/XRN13-30TLS/fusion360) model of the handpiece which has the [stl](docs/design/XRN13-30TLS/fusion360/stl) and STEP files if this suits you better.
-
+### Mk1 Handpiece
 The first handpiece that I made was fabricated from brass and delrin. A YouTube video is available for the [handpiece](https://www.youtube.com/watch?v=D4yPBS8mucQ) along with a video on the handpiece [design refinement](https://www.youtube.com/watch?v=ALAtECnq1Rg)
 
 
