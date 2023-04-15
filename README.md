@@ -24,7 +24,7 @@ There are now 2 versions of the controler that I've built. The original based on
 
 I've created two 3d modelled handpieces in the open source 3d modelling application [Blender](https://www.blender.org/). 
 
-there are no mk2 and mk3 versions 
+there are now mk2 and mk3 versions 
 
 ### Mk2 Handpiece
 
