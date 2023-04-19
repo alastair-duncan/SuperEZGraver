@@ -36,7 +36,7 @@ There are also some variations contributed by [ps-bond](https://github.com/ps-bo
 
 ### Mk3 Handpiece
 
-This handpiece has the addition of a mount for a 25mm fan and is experimental. It suits my hand size and is comfortable. There are no threads on this handle, it does require some 2.5mm machine screws and nuts and a threaded insert in the handle for a stroke length adjuster. I will make a video of how its put together at some point and link to it from here. The handpiece works without the fan but if you want some additional cooling when pushing the Super EZ Graver hard then the fan really helps. Something like [this](https://www.google.com/search?q=micro+fan+25mm+12v+dc) I've used a 12v dc version but there are other voltages available.
+This handpiece has the addition of a mount for a 25mm fan and is experimental. It suits my hand size and is comfortable. There are no threads on this handle, it does require some 2.5mm machine screws and nuts and a threaded insert in the handle for a stroke length adjuster. STL can be found [here](docs/design/XRN13-30TLS/mk3/stl). There is a video of the handpiece available [here](https://youtu.be/Q9xFH1qhLhE). The handpiece works without the fan but if you want some additional cooling when pushing the Super EZ Graver hard then the fan really helps. Something like [this](https://www.google.com/search?q=micro+fan+25mm+12v+dc) I've used a 12v dc version but there are other voltages available.
 
 ### Mk1 Handpiece
 The first handpiece that I made was fabricated from brass and delrin. A YouTube video is available for the [handpiece](https://www.youtube.com/watch?v=D4yPBS8mucQ) along with a video on the handpiece [design refinement](https://www.youtube.com/watch?v=ALAtECnq1Rg)
